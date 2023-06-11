@@ -1,2 +1,2 @@
-#!/bin/bas
-tr "A" "Z" | tr "c" "e"
+#!/bin/bash
+echo $word tr "A" "Z" | tr "c" "e"
