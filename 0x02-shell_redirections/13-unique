@@ -1,2 +1,2 @@
 #!/bin/bash
-ls printf "%s\n" b2* | head -1
+sort | uniq -u
