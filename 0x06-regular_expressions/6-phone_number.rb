@@ -4,7 +4,7 @@
 phone_number = ARGV[0]
 
 # Define the regular expression pattern for a 10-digit phone number
-phone_regex = /^\d{10}$/
+phone_regex = /^(0-9){10}$/
 
 # Check if the provided phone number matches the regular expression
 if phone_number.match?(phone_regex)
