@@ -12,4 +12,3 @@ if phone_number.match?(phone_regex)
 else
   puts "Phone number does not match the required format."
 end
-
