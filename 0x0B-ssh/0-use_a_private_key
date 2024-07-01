@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SERVER_ADDRESS="your_server_ip_or_hostname"
+PRIVATE_KEY="~/.ssh/school"
+USER="ubuntu"
+
+# Connect to the server using ssh with single-character flags
+ssh -i $PRIVATE_KEY $USER@$SERVER_ADDRESS
