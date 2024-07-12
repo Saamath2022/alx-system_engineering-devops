@@ -1,14 +1,15 @@
-#!/usr/bin/bash
-
-# Ensure SSH client configuration
-file_line { 'Turn off passwd auth':
-  path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAuthentication no',
-  match  => '^#?PasswordAuthentication',
+file { 'ssh_config':
+  path    => '/home/masa2024/.ssh/config',
+  ensure  => file,
+  mode    => '0600',
+  owner   => 'masa2024',
+  group   => 'masa2024',
+  content => template('ssh/ssh_config.erb'),
 }
 
-file_line { 'Declare identity file':
-  path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/school',
-  match  => '^#?IdentityFile',
+file { '/home/masa2024/.ssh':
+  ensure => directory,
+  owner  => 'masa2024',
+  group  => 'masa2024',
+  mode   => '0700',
 }
