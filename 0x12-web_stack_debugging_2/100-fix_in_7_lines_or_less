@@ -1,14 +1,8 @@
 #!/bin/bash
 
 sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/sites-available/default
-
 sed -i 's/user www-data;/user nginx;/g' /etc/nginx/nginx.conf
-
 systemctl restart nginx
-
-echo "Verifying Nginx is running as the nginx user:"
 ps auxff | grep ngin[x]
-
-
-echo "Verifying Nginx is listening on port 8080:"
-nc -z 0 8080; echo $?
+nc -z 0 8080
+echo $?
