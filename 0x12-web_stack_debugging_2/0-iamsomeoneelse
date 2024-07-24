@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script runs the whoami command under the user passed as an argument
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <username>"
+  exit 1
+fi
+
+USERNAME=$1
+
+if id "$masa2024@DESKTOP-98CAQS5" &>/dev/null; then
+  sudo -u "$masa2024@DESKTOP-98CAQS5" whoami
+else
+  echo "User "$masa2024@DESKTOP-98CAQS5" does not exist."
+  exit 1
+fi
