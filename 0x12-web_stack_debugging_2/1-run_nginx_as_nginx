@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Create the nginx user if it doesn't exist
+if ! id -u nginx > /dev/null 2>&1; then
+    adduser --system --no-create-home --disabled-login --disabled-password nginx
+fi
+
+# Set the ownership and permissions for the nginx directories
+chown -R nginx:nginx /var/lib/nginx /var/log/nginx /var/run/nginx
+chmod -R 755 /var/lib/nginx /var/log/nginx /var/run/nginx
+
+# Modify the nginx configuration file
+sed -i 's/user  nginx;/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/listen       80;/listen 8080;/' /etc/nginx/sites-available/default.conf
+
+# Start nginx as the nginx user
+exec su-exec nginx nginx -g 'daemon off;'

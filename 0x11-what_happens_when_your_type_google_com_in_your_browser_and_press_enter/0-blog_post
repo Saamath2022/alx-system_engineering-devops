@@ -1,0 +1,26 @@
+What Happens When You Type "https://www.google.com" and Press Enter?
+Ever wonder what goes on when you type a web address and hit Enter? Let's break down the steps in a simple way!
+
+1. DNS Request
+First, your browser needs to find out where to send your request. It uses DNS (Domain Name System) to translate the web address (like www.google.com) into an IP address (like 172.217.14.206) that computers understand.
+
+2. TCP/IP
+With the IP address in hand, your browser connects to Google's servers using TCP/IP. This ensures the data sent between your computer and Google's server arrives correctly and in order.
+
+3. Firewall
+Before your data leaves your computer, it passes through a firewall. Think of it as a security guard checking for any dangers, keeping your computer safe from threats.
+
+4. HTTPS/SSL
+To keep the connection secure, your browser uses HTTPS and SSL. These encrypt the data exchanged, making sure no one can eavesdrop or tamper with it.
+
+5. Load Balancer
+Google's site handles lots of visitors, so it uses a load balancer. This spreads incoming requests across multiple servers so no single server gets too busy. This keeps the site fast and responsive.
+
+6. Web Server
+Your request then reaches a web server. The web server stores the website's files and sends them to your browser, deciding what content to deliver to you.
+
+7. Application Server
+For dynamic websites like Google, the web server might pass your request to an application server. This server runs the site's backend code, handling tasks like search queries, user logins, and personalized content.
+
+8. Database
+The application server might need to fetch or store data, like your search history. This data is kept in a database. The server queries the database, retrieves the needed info, and sends it back to the web server.
