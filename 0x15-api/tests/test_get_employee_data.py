@@ -17,9 +17,9 @@ class TestGetEmployeeData(unittest.TestCase):
         employee_data = get_employee_data(5)
 
         self.assertEqual(employee_data["name"], "Wuese Mathias")
-        self.assertEqual(employee_data["total_Wuese Mathias"], 3)
-        self.assertEqual(employee_data["completed_Wuese Mathias"], 2)
-        self.assertEqual(len(employee_data["Wuese Mathias"]), 3)
+        self.assertEqual(employee_data["total_tasks"], 3)
+        self.assertEqual(employee_data["completed_tasks"], 2)
+        self.assertEqual(len(employee_data["Tasks"]), 3)
 
 if __name__ == '__main__':
     unittest.main()
